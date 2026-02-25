@@ -16,8 +16,8 @@ pipeline {
             steps {
                 echo 'scanning project'
 			    sh '''mvn sonar:sonar \\
-  -Dsonar.host.url=http://13.127.164.252:9000 \\
-  -Dsonar.login=ae71c2e5c7b3c5932dea385c16eb074bd9ad764d'''
+  -Dsonar.host.url=http://13.127.4.116:9000 \\
+  -Dsonar.login=${SONAR_TOKEN}'''
             }
         }
 		
