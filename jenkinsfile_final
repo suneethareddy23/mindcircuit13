@@ -22,8 +22,8 @@ pipeline {
                 sh 'ls -ltr'
                 
                 sh ''' mvn sonar:sonar \\
-                      -Dsonar.host.url=http://44.210.116.12:9000 \\
-                      -Dsonar.login=squ_a46b6947d43a812180415ff94219120d2ddebcea'''
+                      -Dsonar.host.url=http://13.127.4.116:9000 \\
+                      -Dsonar.login=${SONAR_TOKEN}'''
             }
     	}
 		
@@ -75,8 +75,8 @@ pipeline {
 				withCredentials([string(credentialsId: 'githubtoken', variable: 'githubtoken')]) 
 				{
                   sh '''
-                    git config user.email "gorekarmadhu@gmail.com"
-                    git config user.name "Madhu"
+                    git config user.email "suneetha.duddekunta23@gmail.com"
+                    git config user.name "suneethareddy23"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/batch13:.*/batch13:${BUILD_NUMBER}/g" deploymentfiles/deployment.yml
                     git add .
